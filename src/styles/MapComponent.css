@@ -1,0 +1,238 @@
+/* 🎨 Global Styles */
+body {
+  background: linear-gradient(to right, #181818, #232323);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 📍 Map Styling */
+.map-container {
+  height: 400px;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid #444;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* 📌 Section Headings */
+h3 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 20px 0;
+  text-transform: uppercase;
+  color: #f8f8f8;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* 📌 Content Layout */
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 20px;
+  gap: 50px; /* ⬅️ Adds clear separation */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* 📌 Reference Section - Larger */
+.reference-section {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 📌 Reference Image Container */
+.reference-container {
+  position: relative;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.reference-container:hover {
+  transform: scale(1.02);
+}
+
+/* 📌 Larger Reference Image */
+.reference-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  border: 2px solid #666;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease-in-out;
+}
+
+.reference-image:hover {
+  transform: scale(1.05);
+}
+
+/* 📍 Markers */
+.marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff4d4d;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 12px rgba(255, 77, 77, 0.8);
+  animation: glow 1.5s infinite alternate, bounce 1.2s infinite alternate;
+}
+
+.marker:hover {
+  
+  background-color: #ff1a1a;
+}
+
+.active-marker {
+  background-color: #3498db !important;
+  box-shadow: 0px 0px 15px rgba(52, 152, 219, 0.9);
+}
+
+/* 🖼️ 3D View Section - Smaller */
+.view-section {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* ⬅️ Extra spacing between Reference and Views */
+.view-section::before {
+  content: "";
+  display: block;
+  height: 10px;
+}
+
+/* 🖼️ 3D Object Image Container */
+.image-container {
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* 🖼️ Smaller 3D View Image */
+.object-image {
+  width: 75%;
+  max-width: 230px; /* Smaller size */
+  border-radius: 12px;
+  border: 2px solid #777;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+
+.object-image:hover {
+  transform: scale(1.07);
+}
+
+/* 📌 Placeholder for Empty State */
+.placeholder {
+  font-size: 18px;
+  color: #999;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ❌ Close Button with Bounce & Glow */
+.close-button {
+  background: linear-gradient(135deg, #ff4d4d, #ff0000);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.8);
+  animation: glow 1.5s infinite alternate;
+}
+
+/* 🔄 Bounce Effect on Hover */
+.close-button:hover {
+  animation: bounce 0.6s infinite alternate;
+  background: linear-gradient(135deg, #ff0000, #b30000);
+  transform: scale(1.1);
+}
+
+/* 🏮 Glowing Effect */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+  }
+}
+
+/* 🔄 Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔄 Bounce Animation */
+@keyframes bounce {
+  0% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(-5px);
+  }
+}
+
+/* 🛠️ Responsive Design */
+@media (max-width: 900px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .reference-section, .view-section {
+    width: 100%;
+  }
+
+  .reference-image {
+    max-width: 100%;
+  }
+
+  .object-image {
+    max-width: 80%;
+  }
+}
